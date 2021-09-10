@@ -1,0 +1,240 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(204, 207, 211);
+    overflow-y: hidden;
+}
+.envelopebox{
+    position: relative;
+    height: 600px;
+    width: 700px;
+    animation-name: flip;
+    animation-duration: 15s;
+    transform-origin: center;
+    animation-iteration-count: infinite;
+}
+@keyframes flip{
+    0%{
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(-5deg);
+    }
+    30%{
+        transform: rotate(0deg);
+    }
+    70%{
+        transform: rotate(0deg);
+    }
+    80%{
+        transform: rotate(30%deg);
+    }
+    100%{
+        transform: rotate(30deg);
+    }
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #c6c2be;
+    backface-visibility: hidden;
+    transform: perspective(1600px) rotateY(360deg);
+    animation-name: front;
+    animation-duration: 15s;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-iteration-count: infinite;
+    box-shadow:0px 0px 34px 8px rgba(143,143,143,0.81);
+}
+@keyframes front{
+    0%{
+        transform: rotateY(180deg);
+    }
+    30%{
+        transform: rotateY(360deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #94938f;
+    z-index: 7;
+    backface-visibility: hidden;
+    transform: perspective(1600px) rotateY(180deg);
+    animation-name: back;
+    animation-duration: 15s;
+    transform-origin: center;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 34px 8px rgba(143,143,143,0.81);
+}
+@keyframes back{
+    0%{
+        transform: rotateY(0deg);
+    }
+    30%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
+h1{
+    color: white;
+    font-weight: 600;
+    left: 50%;
+    font-size: 50px;
+    top: 50%;
+    font-family: 'Courgette', cursive;
+}
+.card{
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    background-color: #003358;
+    animation-name: card;
+    animation-duration: 15s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-iteration-count: infinite;
+}
+@keyframes card{
+    0%{
+        transform: translateY(0px);
+    }
+    47%{
+        transform: translateY(0px);
+        z-index: 0;
+    }
+    60%{
+        transform: translateY(-600px);
+        z-index: 0;
+    }
+    61%{
+        z-index: 10;
+    }
+    70%{
+        transform: perspective(0) translateY(0px) rotate(0deg) scale(1);
+        z-index: 10;
+    }
+    100%{
+        transform: perspective(1000px) translateY(0) rotate(-30deg) scale(1.1);
+        z-index: 10;
+    }
+}
+.top{
+    position: absolute;
+    border-top: 350px solid #b9b9b9;
+    border-right: 350px solid transparent;
+    border-left: 350px solid transparent;
+    top: 0;
+    z-index: 5;
+    animation-name: top;
+    animation-duration: 15s;
+    transform-origin: top;
+    animation-iteration-count: infinite;
+}
+@keyframes top{
+    0%{
+        transform: rotatex(0deg);
+    }
+    30%{
+        transform: rotatex(0deg); 
+    }
+    45%{
+        transform: rotatex(180deg);
+        z-index: 5; 
+    }
+    46%{
+        z-index: -1;
+    }
+    100%{
+        transform: rotatex(180deg); 
+        z-index: -1;
+    }
+}
+.insidetop{
+    position: absolute;
+    border-top: 280px solid #c6c2be;
+    border-right: 330px solid transparent;
+    border-left: 330px solid transparent;
+    top: 0;
+    animation-name: topinside;
+    animation-duration: 15s;
+    transform-origin: top;
+    animation-iteration-count: infinite;
+}
+@keyframes topinside{
+    0%{
+        transform: rotatex(0deg);
+    }
+    30%{
+        transform: rotatex(0deg); 
+    }
+    45%{
+        transform: rotatex(180deg);
+    }
+    46%{
+        z-index: -1;
+    }
+    100%{
+        transform: rotatex(180deg); 
+        z-index: -1;
+    }
+}
+.bottom{
+    position: absolute;
+    border-bottom: 350px solid #94938f;
+    border-right: 350px solid transparent;
+    border-left: 350px solid transparent;
+    bottom: 0;
+    z-index: 4;
+}
+.right{
+    position: absolute;
+    border-bottom: 300px solid transparent;
+    border-right: 350px solid #9c9b9b;
+    border-top: 300px solid transparent;
+    right:0;
+    z-index: 3;
+}
+.left{
+    position: absolute;
+    border-bottom: 300px solid transparent;
+    border-left: 350px solid #9c9b9b;
+    border-top: 300px solid transparent;
+    left:0;
+    z-index: 2;
+}
+.stamp{
+    width: 150px;
+    height: 145px;
+    margin-right: 30px;
+}
+.stampbox{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
