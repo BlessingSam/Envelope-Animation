@@ -1,3 +1,2 @@
 # Envelope-Animation
 
-# https://blessingsam.github.io/Envelope-Animation/ Tap Here...
